@@ -1,0 +1,66 @@
+﻿@model MasterDetailProject.Models.OrderDetail;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Order Details</h2>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Order Information
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Order ID</dt>
+                        <dd class="col-sm-8">@Model.OrderID</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Total Items</dt>
+                        <dd class="col-sm-8">1</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-4">Order Item</h3>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.ProductName</td>
+                    <td>@Model.Quantity</td>
+                    <td>@Model.UnitPrice.ToString("C")</td>
+                    <td>@(Model.Quantity * Model.UnitPrice)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .table thead {
+        background-color: #343a40;
+        color: white;
+    }
+</style>
+

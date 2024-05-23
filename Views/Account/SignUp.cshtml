@@ -1,0 +1,42 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container mt-5">
+        <h2>Signup</h2>
+
+        <form action="/Account/Create" method="post">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" value="@Model?.Name" />
+                @*<span class="text-danger">@ViewData.ModelState["Name"]?.Errors.FirstOrDefault()?.ErrorMessage</span>*@
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" id="Email" name="Email" value="@Model?.Email" />
+                @*<span class="text-danger">@ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage</span>*@
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" id="Password" name="Password" />
+                @*<span class="text-danger">@ViewData.ModelState["Password"]?.Errors.FirstOrDefault()?.ErrorMessage</span>*@
+            </div>
+            <div class="form-group">
+                <label for="Phone">Phone</label>
+                <input type="text" class="form-control" id="Phone" name="Phone" value="@Model?.Phone" />
+                @*<span class="text-danger">@ViewData.ModelState["Phone"]?.Errors.FirstOrDefault()?.ErrorMessage</span>*@
+            </div>
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input type="text" class="form-control" id="Address" name="Address" value="@Model?.Address" />
+                @*<span class="text-danger">@ViewData.ModelState["Address"]?.Errors.FirstOrDefault()?.ErrorMessage</span>*@
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
